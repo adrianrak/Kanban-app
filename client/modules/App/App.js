@@ -34,7 +34,7 @@ export class App extends Component {
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
         <div>
           <Helmet
-            title="MERN Starter - Blog App"
+            title="Kanban App"
             titleTemplate="%s - Blog App"
             meta={[
               { charset: 'utf-8' },
@@ -48,11 +48,7 @@ export class App extends Component {
               },
             ]}
           />
-          <Header
-            switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-            intl={this.props.intl}
-            toggleAddPost={this.toggleAddPostSection}
-          />
+          <h1 className={styles.title}>Kanban board</h1>
           <div className={styles.container}>
             {this.props.children}
           </div>

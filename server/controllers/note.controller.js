@@ -45,11 +45,11 @@ export function deleteNote(req, res) {
   });
 }
 
-export function editNote(req, res) {
+export function updateNote(req, res) {
   if (!req.body.task) {
     res.status(403).end();
   }
-  Note.updateOne({ id: req.params.noteId }, { $set: { task: req.body.task }},
+  Note.updateOne({ id: req.params.noteId }, { $set: { task: req.body.task } },
     (err, resp) => {
     if (err) {
       res.status(500).send(err);
